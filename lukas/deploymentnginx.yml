@@ -11,7 +11,7 @@ spec:
       matchLabels:
         app: nginx-lukas
         tier: frontend
-    replicas: 3
+    replicas: 4
     template:
       metadata:
         labels:
