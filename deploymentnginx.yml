@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx-lukas
+    tier: frontend
+spec:
+    selector:
+      matchLabels:
+        app: nginx-lukas
+        tier: frontend
+    replicas: 3
+    template:
+      metadata:
+        labels:
+          app: nginx-lukas
+          tier: frontend
+      spec:
+        containers:
+          - name: nginx
+            image: nginx:latest
+            ports:
+              - containerPort: 80  
